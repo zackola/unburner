@@ -1,5 +1,5 @@
-var r = /\?*utm_source=feedburner.*/i;
+var r = /(^http.*)(\?+utm_source=feedburner[^#]*)(#?.*)/ig;
 var url = document.location.href;
-if (url.match(r)) {
-  location.href = url.replace(r, '');
-}
+var matches = r.exec(url);
+var new_url = matches[1] + matches[3];
+document.location.href = new_url;

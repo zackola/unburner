@@ -1,6 +1,6 @@
 {
   "name": "Unburner",
-  "version": "0.2",
+  "version": "0.3",
   "icons": { "128": "icon.png" },
   "description": "Strip stupid junk from end of links opened from Google Reader.",
   "content_scripts": [

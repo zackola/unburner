@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script>
+      function test(url) {
+        var r = /(^http.*)(\?+utm_source=feedburner[^#]*)(#?.*)/ig;
+        var matches = r.exec(url);
+        console.log("matches(" + matches.length + "):" + "\n");
+        for (var i = 0; i < matches.length; i++) {
+          console.log("matches[" + i + "]:" + matches[i])
+        }
+        var new_url = matches[1] + matches[3]
+        console.log("new_url:" + new_url);
+        console.log("\n\n")
+      }
+    
+      var url = "http://www.cnn.com/video/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+rss%2Fcnn_topstories+%28RSS%3A+Top+Stories%29#/video/living/2012/07/20/dnt-dogs-found-after-5-years.wxia";
+      test(url);
+
+      var url = "http://www.thisiscolossal.com/2012/07/over-100-high-school-students-draw-3000-frame-music-video-for-michael-andrews/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+colossal+%28Colossal%29"
+      test(url);      
+    </script>
+  </head>
+</html>
